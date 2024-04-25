@@ -1,0 +1,82 @@
+@use "global" as *;
+
+.p-special {
+	background: $black;
+}
+
+.p-special__cards {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+	gap: 50px 40px;
+	grid-auto-flow: row;
+	grid-template-areas:
+		"title title title card01 card01 card01"
+		"card02 card02 card03 card03 card04 card04";
+	@include mq("md") {
+		display: block;
+	}
+}
+
+.p-special__card:nth-of-type(2) {
+	grid-area: card01;
+	@include mq("md") {
+		margin-top: rem(40);
+	}
+}
+
+.p-special__card:nth-of-type(3) {
+	grid-area: card02;
+	@include mq("md") {
+		margin-top: rem(24);
+	}
+}
+
+.p-special__card:nth-of-type(4) {
+	grid-area: card03;
+	@include mq("md") {
+		margin-top: rem(24);
+	}
+}
+
+.p-special__card:nth-of-type(5) {
+	grid-area: card04;
+	@include mq("md") {
+		display: none;
+	}
+}
+
+.p-special__titlearea {
+	padding-top: rem(60);
+	grid-area: title;
+	background: $white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	aspect-ratio: 1;
+	@include mq("md") {
+		aspect-ratio: auto;
+		padding: rem(80) rem(20) rem(20);
+	}
+}
+.p-special__button {
+	margin-top: rem(40);
+}
+.p-special {
+	.p-card__img {
+		border: 3px solid $white;
+	}
+	.p-card__title,
+	.p-card__date,
+	.p-card__cat {
+		color: $white;
+	}
+	.p-card__kind a {
+		color: $black;
+		background: $white;
+	}
+	.p-card__kind a::before,
+	.p-card__kind a::after {
+		background: $black;
+	}
+}

@@ -1,0 +1,11 @@
+@use "global" as *;
+
+.c-headingcat {
+	color: $white;
+	font-size: rem(32);
+	font-weight: 700;
+	min-width: rem(174);
+	width: max-content;
+	position: relative;
+	margin-right: rem(-20);
+}

@@ -1,0 +1,34 @@
+@use "global" as *;
+
+.p-pcmenu {
+	display: flex;
+	justify-content: center;
+	height: rem(60);
+}
+.p-pcmenu__item {
+	display: flex;
+	height: inherit;
+}
+.p-pcmenu__item a {
+	display: flex;
+	height: inherit;
+	align-items: center;
+	padding: 0 rem(20);
+	font-size: rem(22);
+	position: relative;
+	font-weight: 600;
+}
+.p-pcmenu__item a::before {
+	content: "";
+	width: 80%;
+	height: 2px;
+	background: $white;
+	position: absolute;
+	bottom: rem(10);
+	left: 50%;
+	transform: translateX(-50%) scale(0, 1);
+	transition: transform 0.3s;
+}
+.p-pcmenu__item a:hover::before {
+	transform: translateX(-50%) scale(1, 1);
+}

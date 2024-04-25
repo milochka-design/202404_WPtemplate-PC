@@ -1,0 +1,55 @@
+@use "global" as *;
+.p-trigger {
+	position: relative;
+}
+
+.p-trigger__button {
+	width: rem(28);
+	height: rem(20);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	margin-left: auto;
+	cursor: pointer;
+	position: relative;
+	z-index: 10;
+}
+
+.p-trigger__button span {
+	width: 100%;
+	height: 2px;
+	background-color: $white;
+	transition: transform 0.3s;
+	position: absolute;
+	left: 0;
+}
+
+.p-trigger__button span:nth-child(1) {
+	top: 0;
+}
+.p-trigger__button span:nth-child(2) {
+	top: 50%;
+	transform: translateY(-50%);
+	height: 2px;
+}
+.p-trigger__button span:nth-child(3) {
+	bottom: 0;
+}
+
+/* メニューボタンのアニメーション */
+.js-open.p-trigger__button span:nth-child(1) {
+	transform: rotate(33deg);
+	top: 50%;
+	width: 110%;
+	background-color: $white;
+}
+.js-open.p-trigger__button span:nth-child(2) {
+	display: none;
+}
+.js-open.p-trigger__button span:nth-child(3) {
+	transform: rotate(-33deg);
+	top: 50%;
+	width: 110%;
+	background-color: $white;
+}

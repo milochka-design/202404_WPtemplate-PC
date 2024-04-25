@@ -1,0 +1,10 @@
+@use "global" as *;
+
+.c-footerlogo {
+}
+.c-footerlogo img {
+	display: block;
+	width: rem(200);
+	margin-left: auto;
+	margin-right: auto;
+}

@@ -1,0 +1,22 @@
+@use "global" as *;
+
+.p-404 {
+	text-align: center;
+}
+
+.p-404__title {
+	font-size: rem(60);
+	font-weight: 700;
+	@include mq("md") {
+		font-size: rem(28);
+	}
+}
+
+.p-404__text {
+	font-size: rem(16);
+	margin-top: rem(20);
+}
+
+.p-404__button {
+	margin-top: rem(60);
+}

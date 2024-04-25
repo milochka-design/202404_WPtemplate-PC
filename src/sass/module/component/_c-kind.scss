@@ -1,0 +1,19 @@
+@use "global" as *;
+.c-cat {
+	@include mq("md") {
+		font-size: rem(16);
+	}
+}
+.c-cat a {
+	padding: rem(2) rem(16);
+	background-color: $black;
+	color: $white;
+	font-size: rem(16);
+	font-weight: 600;
+	position: relative;
+	width: max-content;
+	display: inline-block;
+	@include mq("md") {
+		padding: rem(1) rem(16);
+	}
+}

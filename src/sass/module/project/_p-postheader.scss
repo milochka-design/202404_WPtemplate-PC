@@ -1,0 +1,75 @@
+@use "global" as *;
+
+.p-postheader {
+	padding: rem(20) rem(20);
+	position: relative;
+	border-top: $black 6px solid;
+	border-bottom: $black 6px solid;
+}
+
+.p-postheader::before {
+	top: 0;
+}
+.p-postheader::after {
+	bottom: 0;
+}
+
+.p-postheader__meta {
+	margin-top: rem(8);
+	display: flex;
+	grid-gap: rem(8);
+}
+.p-postheader__date {
+	font-size: rem(16);
+	font-weight: 700;
+}
+
+.p-postheader__title {
+	font-size: rem(33);
+	font-weight: 500;
+	margin-top: rem(8);
+	@include mq("md") {
+		font-size: rem(17);
+	}
+}
+.p-post .p-postheader__title {
+	@include mq("md") {
+		font-size: rem(20);
+		font-weight: 500;
+	}
+}
+.p-postheader__link {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+.p-postheader__keywords {
+	margin-top: rem(8);
+	position: relative;
+	z-index: 2;
+}
+.p-postheader__cat,
+.p-postheader__kind {
+	position: relative;
+	z-index: 2;
+}
+
+.p-postheader__link:hover ~ .p-postheader__img img {
+	transform: scale(1.05);
+}
+
+.p-main--special {
+	.p-postheader {
+		background: $black;
+		border-top: $white 6px solid;
+		border-bottom: $white 6px solid;
+	}
+
+	.p-postheader__date,
+	.p-postheader__title {
+		color: $white;
+	}
+}

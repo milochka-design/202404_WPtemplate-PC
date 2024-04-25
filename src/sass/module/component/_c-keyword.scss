@@ -1,0 +1,53 @@
+@use "global" as *;
+
+.c-keyword {
+	background-color: $white;
+	border: $black solid 2px;
+	font-size: rem(16);
+	font-weight: 700;
+	padding: 1px 4px 1px 12px;
+	position: relative;
+	line-height: 1.3;
+	color: $black !important;
+}
+
+.p-card .c-keyword {
+	@include mq("md") {
+		font-size: rem(12);
+	}
+}
+
+.c-keyword::before {
+	content: "#";
+	width: rem(16);
+	aspect-ratio: 1;
+	color: $black;
+	font-size: rem(16);
+	position: absolute;
+	top: 50%;
+	left: 2px;
+	transform: translateY(-50%);
+	@include mq("md") {
+		font-size: rem(12);
+		transform: translateY(-45%);
+	}
+}
+
+.c-sectiontitle2 .c-keyword {
+	font-size: rem(32);
+	padding: 4px 8px 4px 30px;
+	line-height: 1;
+	@include mq("md") {
+		font-size: rem(20);
+		padding: 2px 6px 2px 24px;
+	}
+}
+.c-sectiontitle2 .c-keyword::before {
+	content: "#";
+	width: rem(24);
+	font-size: rem(32);
+	@include mq("md") {
+		font-size: rem(20);
+		width: rem(24);
+	}
+}

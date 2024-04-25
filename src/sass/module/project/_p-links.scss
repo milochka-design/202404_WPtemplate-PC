@@ -1,0 +1,32 @@
+@use "global" as *;
+
+.p-links__item + .p-links__item {
+	margin-top: rem(8);
+	@include mq("md") {
+		margin-top: rem(20);
+	}
+}
+
+.p-links__item {
+	font-size: rem(18);
+	font-weight: 600;
+	line-height: 2;
+
+	@include mq("md") {
+		line-height: 1.2;
+		font-size: rem(16);
+	}
+}
+.p-links a {
+	display: flex;
+	grid-gap: rem(8);
+	align-items: center;
+}
+.p-links__item a img {
+	width: rem(30);
+	height: rem(30);
+	@include mq("md") {
+		width: rem(24);
+		height: rem(24);
+	}
+}

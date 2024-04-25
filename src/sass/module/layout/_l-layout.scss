@@ -1,0 +1,22 @@
+@use "global" as *;
+
+.l-layout {
+	display: grid;
+	grid-template:
+		"main side" 1fr
+		/1fr rem(304);
+	@include mq("md") {
+		display: block;
+	}
+
+	&__aside {
+		grid-area: side;
+		background-color: pink;
+		@include mq("md") {
+			display: none;
+		}
+	}
+	&__main {
+		grid-area: main;
+	}
+}

@@ -1,0 +1,33 @@
+@use "global" as *;
+body {
+	-webkit-text-size-adjust: 100%;
+}
+.p-textsliderarea {
+	width: 100%;
+	overflow-x: hidden;
+	border-top: 3px solid $black;
+	border-bottom: 3px solid $black;
+	padding: rem(8) 0;
+}
+.p-textslider {
+	.swiper-wrapper {
+		transition-timing-function: linear;
+	}
+	.swiper-slide {
+		display: inline-block;
+		white-space: nowrap;
+		width: auto !important;
+		word-break: keep-all;
+		padding-left: rem(20);
+	}
+
+	.swiper-slide p,
+	.swiper-slide p a {
+		font-size: rem(22);
+		font-weight: 600;
+
+		@include mq("md") {
+			font-size: rem(16);
+		}
+	}
+}

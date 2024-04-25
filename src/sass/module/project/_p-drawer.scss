@@ -1,0 +1,47 @@
+@use "global" as *;
+
+.p-drawer {
+	background: $black;
+	color: $white;
+	width: 100vw;
+	height: 100vh;
+	height: 100dvh;
+	position: fixed;
+	top: 0;
+	right: 0;
+	transform: translateX(100%);
+	transition: transform 0.3s;
+	z-index: 1;
+}
+.p-drawer__inner::after {
+	display: block;
+	position: absolute;
+	z-index: 1;
+	content: " ";
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: calc(100% + 1px);
+	z-index: -1;
+}
+.p-drawer.js-open {
+	transform: translateX(0);
+}
+.p-drawer__inner {
+	position: relative;
+	padding: rem(80) $padding-sp rem(40);
+	width: 100%;
+	overflow-y: scroll;
+	overscroll-behavior-y: none;
+	height: 100%;
+}
+.p-drawer__contents {
+	overflow-y: auto;
+	overscroll-behavior: contain;
+}
+
+.p-drawer__menu {
+	margin-top: rem(20);
+	font-weight: 700;
+}

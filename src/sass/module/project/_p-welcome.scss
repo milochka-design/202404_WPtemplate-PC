@@ -1,0 +1,117 @@
+@use "global" as *;
+.p-welcome__container {
+	border: 6px solid $black;
+	display: grid;
+	grid-template-columns: repeat(4, 25%);
+	grid-template-rows: rem(110) repeat(4, 1fr);
+	grid-template-areas:
+		"area1 area1 area1 area1"
+		"area2 area2 area3 area3"
+		"area4 area4 area3 area3"
+		"area5 area6 area6 area7"
+		"area8 area8 area9 area9"
+		"area8 area8 area10 area10";
+	@include mq("md") {
+		border: 4px solid $black;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: rem(75) 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+		gap: 0px 0px;
+		grid-template-areas:
+			"area1 area1"
+			"area2 area2"
+			"area4 area4"
+			"area5 area7"
+			"area6 area6"
+			"area8 area3"
+			"area9 area9"
+			"area10 area10";
+	}
+}
+.p-welcome__container > div {
+	outline: 4px solid $black;
+	outline-offset: -2px;
+}
+.p-welcome__container > div > img {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+.area1 {
+	grid-area: area1;
+	background: $black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: $white;
+	position: relative;
+}
+.area1 h2 {
+	font-size: rem(40);
+	font-weight: 500;
+	@include mq("md") {
+		font-size: rem(24);
+	}
+}
+.area1::before,
+.area1::after {
+	content: "";
+	width: 12px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background-color: $white;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.area1::before {
+	left: 16px;
+}
+.area1::after {
+	right: 16px;
+}
+
+.area2 {
+	grid-area: area2;
+}
+.area3 {
+	grid-area: area3;
+}
+.area4 {
+	grid-area: area4;
+}
+.area5 {
+	grid-area: area5;
+	@include mq("md") {
+		aspect-ratio: 1;
+	}
+}
+.area6 {
+	grid-area: area6;
+}
+.area7 {
+	grid-area: area7;
+}
+.area8 {
+	grid-area: area8;
+}
+.area9 {
+	grid-area: area9;
+}
+.area10 {
+	grid-area: area10;
+}
+
+.area4,
+.area6,
+.area9 {
+	background: $white;
+	font-size: rem(18);
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 2;
+	@include mq("md") {
+		font-size: rem(14);
+	}
+}

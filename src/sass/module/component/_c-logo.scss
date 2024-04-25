@@ -1,0 +1,16 @@
+@use "global" as *;
+
+.c-logo {
+	width: rem(300);
+	border: 3px solid $black;
+	background: $white;
+	display: grid;
+	place-items: center;
+}
+.c-logo img {
+	display: block;
+	width: calc(230 / 238 * 100%);
+	object-fit: cover;
+	margin-left: auto;
+	margin-right: auto;
+}

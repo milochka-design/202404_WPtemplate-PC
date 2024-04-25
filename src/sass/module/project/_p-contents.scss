@@ -1,0 +1,171 @@
+@use "global" as *;
+
+.p-contents,
+.editor-styles-wrapper {
+	h2 {
+		margin: rem(70) 0 rem(40);
+		font-size: rem(27);
+		letter-spacing: 0.03em;
+		line-height: 1.5;
+		font-weight: 700;
+		border-top: 2px solid $black;
+		border-bottom: 2px solid $black;
+		padding: rem(10) 0;
+		@include mq(md) {
+			margin: rem(40) 0 rem(30);
+			font-size: rem(22);
+		}
+	}
+
+	h3 {
+		margin: rem(40) 0 rem(30);
+		padding: rem(5) 0 rem(5) rem(20);
+		border-left: 8px solid $black;
+		font-size: rem(22);
+		letter-spacing: 0.03em;
+		font-weight: 700;
+		line-height: 1.5;
+		@include mq(md) {
+			margin: rem(40) 0 rem(30);
+			font-size: rem(20);
+		}
+	}
+
+	h4 {
+		margin-top: rem(48);
+		font-size: rem(18);
+		line-height: 1.5;
+		@include mq(md) {
+			margin-top: rem(20);
+			font-size: rem(17);
+		}
+	}
+
+	p {
+		margin-bottom: rem(30);
+		font-size: rem(16);
+		line-height: calc(30 / 16);
+		letter-spacing: 0.03em;
+		@include mq(md) {
+			margin-bottom: rem(20);
+			font-size: rem(14);
+		}
+	}
+
+	p a {
+		text-decoration: underline $blue;
+		color: $blue;
+	}
+
+	ul {
+		margin-left: rem(20);
+		margin-bottom: rem(30);
+		@include mq("md") {
+			margin-left: 0;
+		}
+	}
+
+	ul li {
+		padding-left: rem(30);
+		font-size: rem(16);
+		line-height: 1.5;
+		position: relative;
+		@include mq("md") {
+			font-size: rem(14);
+		}
+	}
+
+	ul li:not(:first-of-type),
+	ol li:not(:first-of-type) {
+		margin-top: rem(16);
+	}
+
+	ul li::before {
+		content: "";
+		width: rem(8);
+		height: rem(8);
+		display: inline-block;
+		background-color: $black;
+		border-radius: 50%;
+		position: absolute;
+		top: rem(9);
+		left: rem(8);
+	}
+	ol li::before {
+		counter-increment: number;
+		content: counter(number);
+		background-color: $black;
+		border: 1px solid;
+		border-radius: 50%;
+		box-sizing: border-box;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 24px;
+		aspect-ratio: 1;
+		color: $white;
+		font-size: 85%;
+		line-height: 1;
+		position: absolute;
+		top: rem(2);
+		left: 0;
+	}
+
+	ol {
+		margin-left: rem(20);
+		margin-bottom: rem(30);
+		counter-reset: number;
+		@include mq("md") {
+			margin-left: 0;
+		}
+	}
+
+	ol li {
+		padding-left: rem(30);
+		font-size: rem(16);
+		line-height: 1.5;
+		position: relative;
+		@include mq("md") {
+			font-size: rem(14);
+		}
+	}
+
+	ol li::before {
+		counter-increment: number;
+		content: counter(number);
+		background-color: $black;
+		border: 1px solid;
+		border-radius: 50%;
+		box-sizing: border-box;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 24px;
+		aspect-ratio: 1;
+		color: $white;
+		font-size: 85%;
+		line-height: 1;
+		position: absolute;
+		top: rem(2);
+		left: 0;
+	}
+	ol.c-listsecond li::before {
+		content: "(" counter(number) ")" !important;
+	}
+
+	figure {
+		margin-bottom: rem(30);
+	}
+
+	figcaption {
+		font-size: rem(14);
+		text-align: center;
+		@include mq("md") {
+			font-size: rem(12);
+		}
+	}
+
+	.wp-block-column *:last-child {
+		margin-bottom: 0;
+	}
+}

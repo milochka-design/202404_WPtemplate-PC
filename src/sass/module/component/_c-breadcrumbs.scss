@@ -1,0 +1,39 @@
+@use "global" as *;
+
+.c-breadcrumbs {
+	padding: 0 rem(40);
+	border-bottom: 3px solid $black;
+	font-size: rem(16);
+	font-weight: 600;
+
+	.home span {
+		padding-right: rem(12);
+	}
+	.page,
+	.post,
+	.archive,
+	.taxonomy {
+		padding: 0 rem(12);
+		color: $gray;
+		white-space: nowrap;
+	}
+
+	.current-item {
+		color: $black;
+	}
+	a {
+		color: $gray;
+	}
+	a :hover {
+		color: $black;
+	}
+	@include mq("md") {
+		padding: 0 rem(12);
+		font-size: rem(12);
+		width: 100%;
+		overflow-x: scroll;
+		.c-breadcrumbs__inner {
+			width: max-content;
+		}
+	}
+}

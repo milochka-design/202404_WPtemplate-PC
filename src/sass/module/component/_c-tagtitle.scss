@@ -1,0 +1,50 @@
+@use "global" as *;
+.c-tagtitle {
+	text-align: center;
+	color: $white;
+	background: $black;
+	font-size: rem(20);
+	font-weight: 600;
+	position: relative;
+	padding: rem(4) 0;
+}
+.c-tagtitle::before,
+.c-tagtitle::after {
+	content: "";
+	width: 5px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background-color: $white;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.c-tagtitle::before {
+	left: 10px;
+}
+.c-tagtitle::after {
+	right: 10px;
+}
+
+.p-drawer {
+	.c-tagtitle {
+		color: $black;
+		background: $white;
+		font-size: rem(16);
+		padding: rem(3) 0;
+	}
+	.c-tagtitle::before,
+	.c-tagtitle::after {
+		background-color: $black;
+	}
+}
+.p-main--special {
+	.c-tagtitle {
+		color: $black;
+		background: $white;
+	}
+	.c-tagtitle::before,
+	.c-tagtitle::after {
+		background-color: $black;
+	}
+}

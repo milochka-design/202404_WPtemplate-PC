@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.l-archive {
+	padding-bottom: rem(170);
+	@include mq("md") {
+		padding-bottom: rem(60);
+	}
+}

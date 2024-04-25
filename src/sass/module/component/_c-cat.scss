@@ -1,0 +1,59 @@
+@use "global" as *;
+
+.c-cat a {
+	font-size: rem(16);
+	font-weight: 700;
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+.c-cat {
+	display: flex;
+	align-items: center;
+}
+.p-card .c-cat a {
+	@include mq("md") {
+		font-size: rem(12);
+	}
+}
+
+.p-card .c-cat {
+	@include mq("md") {
+		font-size: rem(12);
+	}
+}
+.c-cat__circle {
+	width: rem(16);
+	aspect-ratio: 1;
+	border-radius: 50%;
+	display: inline-block;
+	margin-right: rem(6);
+	vertical-align: middle;
+
+	@include mq("md") {
+		width: rem(12);
+	}
+}
+.p-aside__unit .c-cat a {
+	font-size: rem(20);
+}
+.p-aside__unit .c-cat__circle {
+	width: rem(20);
+}
+.c-sectiontitle2 .c-cat {
+	font-size: rem(32);
+	grid-gap: rem(4);
+	@include mq("md") {
+		font-size: rem(24);
+	}
+}
+.c-sectiontitle2 .c-cat__circle {
+	width: rem(24);
+
+	@include mq("md") {
+		width: rem(16);
+	}
+}
+.p-main--special .c-cat a {
+	color: $white;
+}

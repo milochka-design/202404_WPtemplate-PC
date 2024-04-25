@@ -1,0 +1,7 @@
+@use "global" as *;
+
+.p-keywords {
+	display: flex;
+	grid-gap: rem(8);
+	flex-wrap: wrap;
+}
